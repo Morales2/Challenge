@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MarvelApp</string>
+    <string name="loading">Loading…</string>
+    <string name="empty">Failed to load characters. Please, check your internet connection.\n Swipe down to try
+        again</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Search for a character</string>
+    <string name="characters">Characters</string>
+    <string name="favorites">Favorites</string>
+</resources>
