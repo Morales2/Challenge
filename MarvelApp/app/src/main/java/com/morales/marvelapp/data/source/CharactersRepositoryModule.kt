@@ -46,10 +46,10 @@ class CharactersRepositoryModule {
     @Provides
     fun provideDb(context: Application): MarvelAppDatabase =
             Room.databaseBuilder(
-                    context.applicationContext,
+                    context,
                     MarvelAppDatabase::class.java,
-                    "MarvelApp.db"
-            ).build()
+                    "marvel-app-db"
+            ).allowMainThreadQueries().build()
 
     @Singleton
     @Provides

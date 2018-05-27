@@ -11,10 +11,10 @@ abstract class CharactersModule {
 
     @FragmentScoped
     @ContributesAndroidInjector
-    abstract fun charactersFragment(): CharactersFragment
+    internal abstract fun charactersFragment(): CharactersFragment
 
     @ActivityScoped
     @Binds
-    abstract fun charactersPresenter(charactersPresenter: CharactersPresenter): CharactersContract.Presenter
+    internal abstract fun charactersPresenter(charactersPresenter: CharactersPresenter): CharactersContract.Presenter
 
 }

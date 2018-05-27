@@ -14,12 +14,11 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [
+    CharactersRepositoryModule::class,
     ApplicationModule::class,
     ActivityBindingModule::class,
     AndroidSupportInjectionModule::class,
-    CharactersRepositoryModule::class,
-    NetworkModule::class,
-    CharactersModule::class
+    NetworkModule::class
 ])
 interface AppComponent : AndroidInjector<MarvelApplication> {
 

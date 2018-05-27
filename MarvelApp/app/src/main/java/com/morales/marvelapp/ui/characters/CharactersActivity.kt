@@ -6,12 +6,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.SearchView
 import android.view.Menu
-import com.morales.marvelapp.MarvelApplication
 import com.morales.marvelapp.R
 import com.squareup.picasso.Picasso
+import dagger.Lazy
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_characters.*
 import javax.inject.Inject
@@ -22,6 +21,9 @@ class CharactersActivity : DaggerAppCompatActivity() {
 
     @Inject
     lateinit var mPresenter: CharactersContract.Presenter
+
+    @Inject
+    lateinit var charactersFragmentProvider: Lazy<CharactersFragment>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +49,7 @@ class CharactersActivity : DaggerAppCompatActivity() {
             })
         }
 
-        val charactersFragment = CharactersFragment()
+        val charactersFragment = charactersFragmentProvider.get()
         val favoritesFragment = Fragment()
 
         view_pager.apply {

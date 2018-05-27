@@ -15,14 +15,13 @@ import com.morales.marvelapp.ui.base.adapters.AdapterConstants
 import com.morales.marvelapp.ui.characters.adapter.CharacterAdapter
 import com.morales.marvelapp.utils.InfiniteScrollListener
 import com.morales.marvelapp.utils.extensions.inflate
-import dagger.android.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_characters.*
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 import javax.inject.Inject
 
 @ActivityScoped
-class CharactersFragment : RxBaseFragment(), CharactersContract.View {
+class CharactersFragment @Inject constructor() : RxBaseFragment(), CharactersContract.View {
 
     override fun setLoadingIndicator(active: Boolean) {
 
@@ -54,10 +53,6 @@ class CharactersFragment : RxBaseFragment(), CharactersContract.View {
     @Inject
     lateinit var charactersManager: CharactersManager
     private var marvelCharacters: MarvelPage? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {

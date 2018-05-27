@@ -6,11 +6,10 @@ import android.arch.persistence.room.PrimaryKey
 import java.util.*
 
 @Entity(tableName = "Favorites")
-data class Character @JvmOverloads constructor(
+data class Character (
         @PrimaryKey @ColumnInfo(name = "id") var id: String = UUID.randomUUID().toString(),
         @ColumnInfo(name = "name") var title: String = "",
         @ColumnInfo(name = "description") var description: String = "",
-        @ColumnInfo(name = "thumbnailUrl") var thumbnailUrl: String = ""
-) {
-    val favorite : Boolean = false
-}
+        @ColumnInfo(name = "thumbnailUrl") var thumbnailUrl: String = "",
+        @ColumnInfo(name = "favorite") var favorite: Boolean = false
+)

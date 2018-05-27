@@ -1,7 +1,6 @@
 package com.morales.marvelapp.ui.base
 
-import android.support.v4.app.Fragment
-import dagger.android.DaggerFragment
+import dagger.android.support.DaggerFragment
 import rx.subscriptions.CompositeSubscription
 
 open class RxBaseFragment : DaggerFragment() {

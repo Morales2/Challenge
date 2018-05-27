@@ -4,7 +4,9 @@ import com.morales.marvelapp.data.Character
 import com.morales.marvelapp.data.source.CharactersDataSource
 import com.morales.marvelapp.utils.AppExecutors
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class CharactersLocalDataSource @Inject constructor(
         val appExecutors: AppExecutors,
         val tasksDao: CharactersDao
